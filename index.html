@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#15121e" />
+    <title>Little Mic — Karaoke</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <a class="logo" href="#" aria-label="Little Mic home"><span class="logo-icon">♪</span> little mic</a>
+        <span class="header-note">YOUR SONG. YOUR STAGE.</span>
+      </header>
+
+      <section class="welcome">
+        <p class="eyebrow">A LITTLE KARAOKE, ANYTIME</p>
+        <h1>Pick a song.<br /><span>Sing your heart out.</span></h1>
+        <p class="intro">Choose a song from your device, add its lyrics, and the words will follow along.</p>
+      </section>
+
+      <section class="karaoke" aria-label="Karaoke player">
+        <div class="stage-top">
+          <div>
+            <p class="stage-label"><span class="live-dot"></span> YOUR KARAOKE ROOM</p>
+            <h2 id="song-title">Ready when you are</h2>
+            <p class="file-name" id="file-name">Choose a backing track to get started</p>
+          </div>
+          <label class="upload-button" for="audio-file"><span>＋</span> Choose a song</label>
+          <input id="audio-file" type="file" accept="audio/*" hidden />
+        </div>
+
+        <div class="lyrics" id="lyrics" aria-live="polite">
+          <p class="lyric">Your words go here</p>
+          <p class="lyric">Add lyrics below to follow along</p>
+          <p class="lyric">Then press play and sing ✨</p>
+        </div>
+
+        <div class="controls">
+          <button class="play-button" id="play-button" type="button" aria-label="Play" disabled>▶</button>
+          <div class="timeline">
+            <span class="time" id="current-time">0:00</span>
+            <input id="seek" type="range" min="0" max="100" value="0" aria-label="Song position" disabled />
+            <span class="time" id="duration">0:00</span>
+          </div>
+        </div>
+        <audio id="audio"></audio>
+      </section>
+
+      <details class="lyrics-editor">
+        <summary><span>♫</span> Add or edit lyrics <span class="summary-hint">one line at a time</span></summary>
+        <label class="visually-hidden" for="lyrics-input">Lyrics, one line at a time</label>
+        <textarea id="lyrics-input" rows="6" spellcheck="false" placeholder="Paste your lyrics here, one line at a time..."></textarea>
+        <button class="save-button" id="save-lyrics" type="button">Save lyrics</button>
+      </details>
+
+      <footer>Keep it simple. Keep singing.</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
